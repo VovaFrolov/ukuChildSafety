@@ -13,8 +13,8 @@ jQuery(document).ready(function($) {
     });
     $(window).scroll(function(e) {
         header_scroll = jQuery(window).scrollTop();
-        if (header_scroll >= 50) $('body').addClass("sticky");
-        else $('body').removeClass("sticky");
+        if (header_scroll >= 50) $('.header').addClass("sticky");
+        else $('.header').removeClass("sticky");
         var arrow_up = jQuery(".back-to-top"),
             scroll = jQuery(window).scrollTop();
         if (scroll >= 500) arrow_up.addClass("in");
