@@ -9,19 +9,71 @@ jQuery(document).ready(function($) {
 
         $(this).toggleClass("active");
         $("body").toggleClass("mobile-menu-active");
-        $('.left-modal__close').click()
+        $('.mobile-menu').slideToggle()
     });
     $(window).scroll(function(e) {
         header_scroll = jQuery(window).scrollTop();
-        if (header_scroll >= 50) $('.header').addClass("sticky");
-        else $('.header').removeClass("sticky");
-        var arrow_up = jQuery(".back-to-top"),
-            scroll = jQuery(window).scrollTop();
-        if (scroll >= 500) arrow_up.addClass("in");
-        else arrow_up.removeClass("in");
+        if (header_scroll >= 200) $('.header').addClass("sticky ");
+        else $('.header').removeClass("sticky ");
+
+
+
+        // Bind to scroll
+        // Get container scroll position
+        var fromTop = $(this).scrollTop();
+        // Get id of current scroll item
+        var cur = scrollItems.map(function() {
+            if ($(this).offset().top - ($('.header').height() + 41) <= fromTop && $(this).offset().top + $(this).height() >= fromTop) {
+                return this;
+            }
+        });
+        // Get the id of the current element
+        cur = cur[cur.length - 1];
+        var id = cur && cur.length ? cur[0].id : "";
+
+        if (lastId !== id) {
+            lastId = id;
+            // Set/remove active class
+            menuItems
+                .parent().removeClass("active")
+                .end().filter("[href='#" + id + "']").parent().addClass("active");
+        }
 
     });
 
+
+    // Cache selectors
+    var lastId, topMenu = $(".anchor"),
+        // All list items
+        menuItems = topMenu.find("a"),
+        // Anchors corresponding to menu items
+        scrollItems = menuItems.map(function() {
+            var item = $($(this).attr("href"));
+            if (item.length) {
+                return item;
+            }
+        });
+
+
+    // Bind click handler to menu items
+    // so we can get a fancy scroll animation
+
+
+    menuItems.click(function(e) {
+        var href = $(this).attr("href"),
+            offsetTop = href === "#" ? 0 : $(href).offset().top - ($('.header').height() + 40);
+        $('html, body').stop().animate({
+            scrollTop: offsetTop
+        }, 1000);
+        e.preventDefault();
+    });
+
+    if ($(window).width() < 767) {
+        $('.header__nav li a').click(function() {
+            $(".header__toggler").removeClass("active");
+            $(".mobile-menu").slideUp();
+        })
+    }
     accordion($('.accordion__title'))
 
     function accordion(accordionclass) {

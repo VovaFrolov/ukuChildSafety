@@ -13,9 +13,7 @@
 
 
 		<header class="header">
-			<div class="header__toggler">
-				<span></span>
-			</div>
+
 			<div class="header__container ">
 				<div class="header__inner">
 					<div class="header__logo">
@@ -23,16 +21,21 @@
 							<?php the_custom_logo(); ?>
 						</a>
 					</div>
-					<ul class="header__nav anchor">
-						<?php wp_nav_menu(array('container' => '', 'items_wrap' => '%3$s', 'theme_location' => 'primary')); ?>
-					</ul>
-					<div class="header__buttons">
-						<a href="#" class="header__login">
-							Увійти
-						</a>
-						<a href="#" class="header__register btn">
-							Реєстрація
-						</a>
+					<div class="header__toggler">
+						<span></span>
+					</div>
+					<div class="mobile-menu">
+						<ul class="header__nav anchor">
+							<?php wp_nav_menu(array('container' => '', 'items_wrap' => '%3$s', 'theme_location' => 'primary')); ?>
+						</ul>
+						<div class="header__buttons">
+							<a href="#" class="header__login">
+								Увійти
+							</a>
+							<a href="#" class="header__register btn">
+								Реєстрація
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
