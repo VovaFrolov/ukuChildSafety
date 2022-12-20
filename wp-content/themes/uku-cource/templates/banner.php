@@ -7,6 +7,26 @@
 
             <img src="<?= $block['banner_bg']['url'] ?>" alt="<?= $block['banner_bg']['alt'] ?>">
             <img src="<?= $block['banner_img']['url'] ?>" alt="<?= $block['banner_img']['alt'] ?>" class="banner__image">
+
+
+            <?php if ($items = $block['tooltips']) { ?>
+                <div class="tooltips">
+                <?php for ($i = 0; $i < count($items); $i++) {
+                    $item = $items[$i];
+                ?>
+                    <div class="tooltip">
+                        <div class="tooltip__icon">
+                            <img src="<?= $item['icon']['url'] ?>" alt="<?= $item['icon']['alt'] ?>">
+                        </div>
+                        <div>
+                            <div class="tooltip__title"><?= $item['title'] ?></div>
+                            <div class="tooltip__subtitle"><?= $item['subtitle'] ?></div>
+                        </div>
+                    </div>
+                <?php } ?>
+                </div>
+            <?php } ?>
+
         </div>
         <div class="banner__container container ">
             <div class="banner__descr ">

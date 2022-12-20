@@ -6,3 +6,98 @@ Text Domain: uku
 */
 
 @charset "utf-8";
+
+
+.tooltip {
+	background: #FFFFFF;
+	border-radius: 11.2745px;
+	padding: 28px 24px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: absolute;
+}
+
+.tooltip__icon {
+	width: 32px;
+	height: 32px;
+	object-fit: cover;
+	margin-right: 13px;
+}
+.tooltip__icon + div {
+	-webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(100% - 45px);
+    flex: 0 0 calc(100% - 45px);
+    max-width: calc(100% - 45px);
+}
+
+.tooltip__title {
+	font-size: 9px;
+	line-height: 12px;
+	color: #2F2F2F;
+	margin-bottom: 1px;
+}
+.tooltip__subtitle {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 26px;
+	color: #2F2F2F;
+}
+
+.tooltip:nth-child(1) {
+	top: 236px;
+    right: 135px;
+}
+
+.tooltip:nth-child(2) {
+    right: 571px;
+    top: 504px;
+}
+@media (max-width: 1500px) {
+	.tooltip:nth-child(1) {
+		top: 13vw;
+		right: 7vw;
+	}
+	.tooltip:nth-child(2) {
+		right: 31vw;
+		top: 30vw;
+	}
+}
+
+@media (max-width: 992px) {
+	.tooltip:nth-child(1) {
+		right: 1vw;
+	}
+	.tooltip:nth-child(2) {
+	    top: 37vw;
+	}
+}
+@media (max-width: 845px) {
+	.tooltip:nth-child(2) {
+		top: 43vw;
+	}
+}
+@media (max-width: 767px) {
+	.tooltips {
+		position: absolute;
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+	    bottom: 70px;
+		padding: 0 15px;
+	}
+	.tooltip {
+		padding: 15px;
+		position: static;
+	}
+	.tooltip__subtitle {
+		font-size: 16px;
+		line-height: normal;
+	}
+}
+
+@media (max-width: 575px) {
+	.banner {
+	    padding-bottom: 155px;
+	}
+}

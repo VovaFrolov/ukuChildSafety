@@ -29,10 +29,10 @@
 							<?php wp_nav_menu(array('container' => '', 'items_wrap' => '%3$s', 'theme_location' => 'primary')); ?>
 						</ul>
 						<div class="header__buttons">
-							<a href="#" class="header__login">
+							<a target="_blank" href="https://online.ucu.edu.ua/login?next=%2F" class="header__login">
 								Увійти
 							</a>
-							<a href="#" class="header__register btn">
+							<a target="_blank" href="https://online.ucu.edu.ua/courses/course-v1:UCU+EC6+2022/about" class="header__register btn">
 								Реєстрація
 							</a>
 						</div>

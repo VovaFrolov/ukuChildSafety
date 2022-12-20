@@ -211,7 +211,6 @@ input {
             position: relative;
             z-index: 9;
             float: right;
-            margin-right: 30px;
             // .header__toggler span
             span {
                 min-width: 21px;
@@ -1017,6 +1016,9 @@ input {
         position: relative;
         padding-top: 11%;
         padding-left: 13%;
+        @media(max-width: 1440px) {
+            padding-left: 8%;
+        }
         @media(max-width: 1199px) {
             padding-left: 5%;
         }
@@ -1031,6 +1033,7 @@ input {
         margin-bottom: 113px;
         @media(max-width: 991px) {
             margin-bottom: 44px;
+            margin-left: 0;
         }
     }
     // .awaits__image
@@ -1106,9 +1109,6 @@ input {
         &:first-child {
             // .awaits__text:first-child p
             p {
-                &:nth-child(odd) {
-                    margin-left: 50px;
-                }
                 // .awaits__text:first-child p:nth-child(1)
                 &:nth-child(1) {
                     @media(min-width: 992px) {
@@ -1119,6 +1119,9 @@ input {
                     @media(max-width: 1199px) and (min-width: 992px) {
                         padding-left: 15%;
                         max-width: 284px;
+                    }
+                    @media(max-width: 1440px) {
+                        margin-bottom: 13.5%;
                     }
                 }
                 // .awaits__text:first-child p:nth-child(2) 
@@ -1141,20 +1144,21 @@ input {
         &:last-child {
             // .awaits__text:last-child p
             p {
-                &:nth-child(even) {
-                    margin-left: 50px;
-                }
                 // .awaits__text:last-child p:nth-child(1)
                 &:nth-child(1) {
+                    // .awaits__text:last-child p:nth-child(1)
                     @media(min-width: 992px) {
-                        padding-left: 125px;
+                        padding-left: 145px;
                         max-width: 440px;
-                        margin-bottom: 21%;
+                        margin-bottom: 18%;
                         padding-top: 6px;
                     }
                     @media(max-width: 1199px) and (min-width: 992px) {
                         padding-left: 55px;
                         max-width: 375px;
+                    }
+                    @media(max-width: 1440px) {
+                        margin-bottom: 16%;
                     }
                 }
                 // .awaits__text:last-child p:nth-child(2)
@@ -1167,12 +1171,19 @@ input {
                     @media(max-width: 1199px) and (min-width: 992px) {
                         margin-bottom: 25%;
                     }
+                    @media(max-width: 1440px) {
+                        margin-bottom: 27%;
+                    }
                 }
                 // .awaits__text:last-child p:nth-child(3) 
                 &:nth-child(3) {
                     @media(min-width: 992px) {
                         padding-left: 61px;
                         max-width: 360px;
+                    }
+                    @media(max-width: 1440px) {
+                        padding-left: 79px;
+                        max-width: 383px;
                     }
                 }
             }
@@ -1523,9 +1534,6 @@ input {
                     padding-left: 42px;
                     margin-bottom: 25px;
                     padding-right: 0;
-                    &:nth-child(odd) {
-                        margin-left: 50px;
-                    }
                 }
                 // .benefits__inner ul li:before 
                 &:before {
@@ -1574,6 +1582,7 @@ input {
             margin: 0 auto;
             margin-top: 30px;
             height: 68px;
+            max-width: 350px;
         }
         // .benefits__btn svg
         svg {
